@@ -1,0 +1,184 @@
+{
+    "total_transactions": 912,
+    "apriori_itemsets_count": 85,
+    "fpgrowth_itemsets_count": 85,
+    "rules_count": 122,
+    "top_rules": [
+        {
+            "antecedents": [
+                "css"
+            ],
+            "consequents": [
+                "java",
+                "html"
+            ],
+            "support": 0.086,
+            "confidence": 0.655,
+            "lift": 4.9
+        },
+        {
+            "antecedents": [
+                "java",
+                "html"
+            ],
+            "consequents": [
+                "css"
+            ],
+            "support": 0.086,
+            "confidence": 0.639,
+            "lift": 4.9
+        },
+        {
+            "antecedents": [
+                "sql",
+                "html"
+            ],
+            "consequents": [
+                "css"
+            ],
+            "support": 0.092,
+            "confidence": 0.632,
+            "lift": 4.84
+        },
+        {
+            "antecedents": [
+                "css"
+            ],
+            "consequents": [
+                "sql",
+                "html"
+            ],
+            "support": 0.092,
+            "confidence": 0.706,
+            "lift": 4.84
+        },
+        {
+            "antecedents": [
+                "jquery"
+            ],
+            "consequents": [
+                "javascript"
+            ],
+            "support": 0.107,
+            "confidence": 0.845,
+            "lift": 4.816
+        },
+        {
+            "antecedents": [
+                "javascript"
+            ],
+            "consequents": [
+                "jquery"
+            ],
+            "support": 0.107,
+            "confidence": 0.612,
+            "lift": 4.816
+        },
+        {
+            "antecedents": [
+                "html",
+                "mysql"
+            ],
+            "consequents": [
+                "css"
+            ],
+            "support": 0.088,
+            "confidence": 0.606,
+            "lift": 4.645
+        },
+        {
+            "antecedents": [
+                "css"
+            ],
+            "consequents": [
+                "html",
+                "mysql"
+            ],
+            "support": 0.088,
+            "confidence": 0.672,
+            "lift": 4.645
+        },
+        {
+            "antecedents": [
+                "css",
+                "mysql"
+            ],
+            "consequents": [
+                "html"
+            ],
+            "support": 0.088,
+            "confidence": 0.93,
+            "lift": 4.242
+        },
+        {
+            "antecedents": [
+                "html"
+            ],
+            "consequents": [
+                "css",
+                "mysql"
+            ],
+            "support": 0.088,
+            "confidence": 0.4,
+            "lift": 4.242
+        },
+        {
+            "antecedents": [
+                "html"
+            ],
+            "consequents": [
+                "css",
+                "sql"
+            ],
+            "support": 0.092,
+            "confidence": 0.42,
+            "lift": 4.209
+        },
+        {
+            "antecedents": [
+                "css",
+                "sql"
+            ],
+            "consequents": [
+                "html"
+            ],
+            "support": 0.092,
+            "confidence": 0.923,
+            "lift": 4.209
+        },
+        {
+            "antecedents": [
+                "css"
+            ],
+            "consequents": [
+                "html"
+            ],
+            "support": 0.116,
+            "confidence": 0.891,
+            "lift": 4.062
+        },
+        {
+            "antecedents": [
+                "html"
+            ],
+            "consequents": [
+                "css"
+            ],
+            "support": 0.116,
+            "confidence": 0.53,
+            "lift": 4.062
+        },
+        {
+            "antecedents": [
+                "sql",
+                "javascript"
+            ],
+            "consequents": [
+                "html"
+            ],
+            "support": 0.08,
+            "confidence": 0.89,
+            "lift": 4.06
+        }
+    ]
+}

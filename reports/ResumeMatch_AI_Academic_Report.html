@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ResumeMatch AI - Academic Project Report</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1E293B;
+            background: #FFFFFF;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #E2E8F0;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #1E3A8A;
+            font-size: 2.4rem;
+            margin: 0 0 10px 0;
+        }
+        .subtitle {
+            color: #64748B;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .meta {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+        h2 {
+            color: #1E3A8A;
+            border-bottom: 1px solid #CBD5E1;
+            padding-bottom: 6px;
+            margin-top: 35px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            border: 1px solid #CBD5E1;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #1E3A8A;
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #F8FAFC;
+        }
+        .figure {
+            text-align: center;
+            margin: 25px 0;
+        }
+        .figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+        .caption {
+            font-size: 0.88rem;
+            color: #64748B;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        .badge {
+            display: inline-block;
+            background: #E0E7FF;
+            color: #3730A3;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+        @media print {
+            body { padding: 0; }
+            .container { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>RESUMEMATCH AI</h1>
+        <div class="subtitle">An Intelligent Resume Analyzer and Job Recommendation System</div>
+        <div class="meta">
+            <strong>Capstone Project Report</strong> &bull; Complete AI/ML Syllabus (Units 1 - 10)<br>
+            Generated: November 25, 2026 &bull; Status: Fully Evaluated & Passed
+        </div>
+    </div>
+
+    <h2>1. Executive Summary</h2>
+    <p>
+        <strong>ResumeMatch AI</strong> is an intelligent career intelligence platform designed to parse candidate resumes in PDF, DOCX, and TXT formats, extract comprehensive technical and soft skill taxonomies, predict professional job categories across 25 domains with high accuracy, and recommend verified live vacancies with transparent, human-understandable explanations.
+    </p>
+
+    <h2>2. Supervised Classification Evaluation (Units 6 & 7)</h2>
+    <p>Six algorithms evaluated across 962 resumes using 80-20 stratified splitting and 5-Fold Stratified Cross-Validation:</p>
+    <table>
+        <tr>
+            <th>Algorithm</th>
+            <th>Test Accuracy</th>
+            <th>Precision (Macro)</th>
+            <th>Recall (Macro)</th>
+            <th>F1 Weighted</th>
+            <th>5-Fold CV Accuracy</th>
+        </tr>
+    
+        <tr>
+            <td><strong>Logistic Regression</strong></td>
+            <td>0.9896</td>
+            <td>0.9863</td>
+            <td>0.9884</td>
+            <td>0.9897</td>
+            <td>0.9922 (&plusmn;0.005)</td>
+        </tr>
+        
+        <tr>
+            <td><strong>K-Nearest Neighbours</strong></td>
+            <td>0.9896</td>
+            <td>0.9886</td>
+            <td>0.9884</td>
+            <td>0.9896</td>
+            <td>0.9688 (&plusmn;0.005)</td>
+        </tr>
+        
+        <tr>
+            <td><strong>Decision Tree</strong></td>
+            <td>0.9845</td>
+            <td>0.9850</td>
+            <td>0.9867</td>
+            <td>0.9847</td>
+            <td>0.9740 (&plusmn;0.011)</td>
+        </tr>
+        
+        <tr>
+            <td><strong>Random Forest</strong></td>
+            <td>0.9948</td>
+            <td>0.9933</td>
+            <td>0.9964</td>
+            <td>0.9949</td>
+            <td>0.9935 (&plusmn;0.004)</td>
+        </tr>
+        
+        <tr>
+            <td><strong>Naive Bayes</strong></td>
+            <td>0.9896</td>
+            <td>0.9886</td>
+            <td>0.9884</td>
+            <td>0.9896</td>
+            <td>0.9935 (&plusmn;0.004)</td>
+        </tr>
+        
+        <tr>
+            <td><strong>Support Vector Machine</strong></td>
+            <td>1.0000</td>
+            <td>1.0000</td>
+            <td>1.0000</td>
+            <td>1.0000</td>
+            <td>0.9948 (&plusmn;0.003)</td>
+        </tr>
+        
+    </table>
+    <div class="figure">
+        <img src="figures/classification_confusion_matrix.png" alt="Confusion Matrix">
+        <div class="caption">Figure 1: Confusion Matrix across 25 Categories for Best Classifier (LinearSVC)</div>
+    </div>
+    <div class="figure">
+        <img src="figures/model_comparison_accuracy.png" alt="Model Comparison">
+        <div class="caption">Figure 2: Supervised Classification Algorithm Comparison</div>
+    </div>
+
+    <h2>3. Placement Salary Regression (Unit 5)</h2>
+    <p>Evaluated on genuine placement compensation records predicting offered compensation:</p>
+    <table>
+        <tr>
+            <th>Regression Model</th>
+            <th>MAE (INR)</th>
+            <th>RMSE (INR)</th>
+            <th>R² Score</th>
+        </tr>
+    
+        <tr>
+            <td><strong>Simple Linear Regression</strong></td>
+            <td>&#8377;66,852.57</td>
+            <td>&#8377;94,690.89</td>
+            <td>-0.0606</td>
+        </tr>
+        
+        <tr>
+            <td><strong>Multiple Linear Regression</strong></td>
+            <td>&#8377;71,898.23</td>
+            <td>&#8377;94,877.51</td>
+            <td>-0.0647</td>
+        </tr>
+        
+        <tr>
+            <td><strong>Polynomial Regression (Degree 2)</strong></td>
+            <td>&#8377;67,632.28</td>
+            <td>&#8377;91,561.3</td>
+            <td>0.0084</td>
+        </tr>
+        
+    </table>
+    <div class="figure">
+        <img src="figures/regression_predictions.png" alt="Regression Predictions">
+        <div class="caption">Figure 3: Placement Salary Regression - Actual vs Predicted Compensation</div>
+    </div>
+
+    <h2>4. Unsupervised Clustering (Unit 8)</h2>
+    <p>K-Means (Silhouette Score: 0.0591), Hierarchical Ward (Silhouette Score: 0.0523), and DBSCAN:</p>
+    <div class="figure">
+        <img src="figures/clustering_comparison.png" alt="Clustering Comparison">
+        <div class="caption">Figure 4: Unsupervised Candidate Skill Profile Clustering (PCA 2D Projection)</div>
+    </div>
+
+    <h2>5. Association Rules & PCA (Unit 9)</h2>
+    <p>Mined 122 association rules using Apriori and FP-Growth over 912 transaction baskets:</p>
+    <div class="figure">
+        <img src="figures/pca_scree_plot.png" alt="PCA Scree Plot">
+        <div class="caption">Figure 5: PCA Scree Plot - Individual and Cumulative Explained Variance Ratio</div>
+    </div>
+
+    <h2>6. Reinforcement Learning Career MDP (Unit 10)</h2>
+    <p>Tabular Q-Learning agent simulating candidate career upskilling over 500 episodes:</p>
+    <div class="figure">
+        <img src="figures/rl_learning_curve.png" alt="RL Learning Curve">
+        <div class="caption">Figure 6: Q-Learning Agent Learning Curve across 500 Career Application Cycles</div>
+    </div>
+
+    <h2>7. Live Multi-API Recommendation Architecture</h2>
+    <p>
+        The recommendation catalog is powered in real-time by 5 free public APIs: 
+        <strong>Unstop</strong>, <strong>Jobicy</strong>, <strong>Remotive</strong>, <strong>Himalayas</strong>, and <strong>Arbeitnow</strong>.
+        Compatibility scores are computed transparently: 60% Skill Overlap + 40% TF-IDF Cosine Semantic Similarity.
+    </p>
+</div>
+</body>
+</html>

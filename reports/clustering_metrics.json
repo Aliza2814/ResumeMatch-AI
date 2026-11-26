@@ -1,0 +1,35 @@
+{
+    "K-Means": {
+        "n_clusters": 5,
+        "silhouette_score": 0.0591,
+        "cluster_distribution": {
+            "2": 299,
+            "1": 268,
+            "0": 219,
+            "4": 130,
+            "3": 46
+        }
+    },
+    "Hierarchical": {
+        "n_clusters": 5,
+        "linkage": "ward",
+        "silhouette_score": 0.0523,
+        "cluster_distribution": {
+            "0": 387,
+            "1": 322,
+            "2": 101,
+            "3": 78,
+            "4": 74
+        }
+    },
+    "DBSCAN": {
+        "eps": 0.25,
+        "min_samples": 10,
+        "n_clusters_found": 1,
+        "noise_points": 0,
+        "silhouette_score": "N/A (< 2 clusters)",
+        "cluster_distribution": {
+            "0": 962
+        }
+    }
+}

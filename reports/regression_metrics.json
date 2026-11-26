@@ -1,0 +1,35 @@
+{
+    "Simple Linear Regression": {
+        "MAE": 66852.57,
+        "MSE": 8966363983.83,
+        "RMSE": 94690.89,
+        "R2": -0.0606,
+        "features": [
+            "degree_p"
+        ]
+    },
+    "Multiple Linear Regression": {
+        "MAE": 71898.23,
+        "MSE": 9001742116.73,
+        "RMSE": 94877.51,
+        "R2": -0.0647,
+        "features": [
+            "ssc_p",
+            "hsc_p",
+            "degree_p",
+            "etest_p",
+            "mba_p",
+            "workex_num"
+        ]
+    },
+    "Polynomial Regression (Degree 2)": {
+        "MAE": 67632.28,
+        "MSE": 8383471882.18,
+        "RMSE": 91561.3,
+        "R2": 0.0084,
+        "features": [
+            "etest_p",
+            "degree_p"
+        ]
+    }
+}

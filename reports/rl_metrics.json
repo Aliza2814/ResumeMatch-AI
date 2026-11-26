@@ -1,0 +1,20 @@
+{
+    "episodes_trained": 500,
+    "final_20_ep_reward_avg": 63.2,
+    "initial_20_ep_reward_avg": 57.2,
+    "optimal_policy": {
+        "Skill=Low, Tailored=False, Exp=Junior": "Upskill (Acquire Tech Skill)",
+        "Skill=Low, Tailored=False, Exp=Senior": "Upskill (Acquire Tech Skill)",
+        "Skill=Low, Tailored=True, Exp=Junior": "Upskill (Acquire Tech Skill)",
+        "Skill=Low, Tailored=True, Exp=Senior": "Upskill (Acquire Tech Skill)",
+        "Skill=Med, Tailored=False, Exp=Junior": "Upskill (Acquire Tech Skill)",
+        "Skill=Med, Tailored=False, Exp=Senior": "Upskill (Acquire Tech Skill)",
+        "Skill=Med, Tailored=True, Exp=Junior": "Upskill (Acquire Tech Skill)",
+        "Skill=Med, Tailored=True, Exp=Senior": "Upskill (Acquire Tech Skill)",
+        "Skill=High, Tailored=False, Exp=Junior": "Tailor Resume for Specific Role",
+        "Skill=High, Tailored=False, Exp=Senior": "Upskill (Acquire Tech Skill)",
+        "Skill=High, Tailored=True, Exp=Junior": "Apply to Targeted High-Match Jobs",
+        "Skill=High, Tailored=True, Exp=Senior": "Upskill (Acquire Tech Skill)"
+    },
+    "theoretical_rationale": "While RL effectively models multi-step career trajectory planning, content-based matching with TF-IDF/Cosine similarity and supervised classification are deterministic, explainable, and instantaneous for resume screening."
+}
