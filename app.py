@@ -30,7 +30,7 @@ from src.preprocessing.skill_extractor import extract_skills_from_text
 from src.feature_engineering.vectorizer import TextVectorizer
 from src.recommendation.engine import RecommendationEngine
 from src.recommendation.live_jobs_fetcher import sync_live_jobs_to_catalog
-from src.database.connection import get_session, ACTIVE_DB_TYPE
+from src.database.connection import get_session, ACTIVE_DB_TYPE, init_schema
 from src.database.models import ResumeRecord, ExtractedSkill, AnalysisResult, RecommendationRecord, JobRecord
 from src.utils.sample_resumes import SAMPLE_RESUMES
 from src.utils.ui_helpers import (
@@ -40,6 +40,12 @@ from src.utils.ui_helpers import (
     load_classification_metrics, load_regression_metrics,
     load_clustering_metrics, load_association_rules, load_rl_metrics
 )
+
+# Initialize database schema if running on clean cloud environment
+try:
+    init_schema()
+except Exception:
+    pass
 
 # Page configuration
 st.set_page_config(
