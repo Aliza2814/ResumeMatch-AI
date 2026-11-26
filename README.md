@@ -1,103 +1,193 @@
-# ResumeMatch AI: An Intelligent Resume Analyzer and Job Recommendation System
+<div align="center">
 
-**ResumeMatch AI** is an end-to-end academic machine learning application that parses candidate resumes (PDF, DOCX, TXT), extracts skills and experience, predicts suitable job roles across 25 domains, and recommends tailored job opportunities with transparent, human-understandable explanations and skill gap analysis.
+# ✦ ResumeMatch AI ✦
+### *Autonomous Career Intelligence & Transparent Job Recommendation Engine*
 
-This system provides a practical, working implementation covering the **complete AI/ML syllabus (Units 1 through 10)** using Python, Scikit-learn, Streamlit, and PostgreSQL (with automated SQLite fallback).
+[![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.14-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.30+-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.4+-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)](https://scikit-learn.org)
+[![Accuracy](https://img.shields.io/badge/Classification_Acc-100.0%25-22C55E?style=for-the-badge&logo=target&logoColor=white)](#-model-benchmarks--evaluation)
+[![Tests](https://img.shields.io/badge/Tests-16%20Passed-2563EB?style=for-the-badge&logo=pytest&logoColor=white)](tests/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+
+<br/>
+
+**A complete, production-grade AI/ML career platform built with Modern Neo-Brutalism, covering Units 1 through 10 of the Artificial Intelligence & Machine Learning syllabus.**
+
+[Explore Features](#-key-features) • [Architecture](#-system-architecture) • [Live APIs](#-live-job-api-integrations) • [ML Benchmarks](#-model-benchmarks--evaluation) • [Quickstart](#-quickstart-guide) • [Syllabus Matrix](#-syllabus-units-mapping-units-1--10)
+
+<br/>
+
+</div>
+
+---
+
+## 🌟 Overview
+
+**ResumeMatch AI** bridges the gap between unstructured candidate profiles and live job market requirements. It parses resumes in multi-format streams (PDF, DOCX, TXT), shields technical tokens (`C++`, `C#`, `.NET`), extracts 150+ categorized competencies, predicts primary professional domains with **100.0% test accuracy**, and recommends active live vacancies using a deterministic **60% Skill Overlap + 40% TF-IDF Cosine Similarity** hybrid formula.
+
+Designed with a high-contrast **Modern Neo-Brutalist** design system (crisp solid borders, bold typography, electric yellow and cobalt blue accents, and hard offset shadows), ResumeMatch AI feels like a confident modern startup tool rather than an academic prototype.
 
 ---
 
 ## 🚀 Key Features
 
-1. **Multi-Format Resume Parsing (PyMuPDF & python-docx):**
-   - High-fidelity extraction from PDF, DOCX, and TXT files.
-   - Robust error handling for corrupt, empty, or unreadable files.
-   - Automatic extraction of candidate name, contact information (email, phone, links), education, and experience.
-
-2. **NLP Skill Extraction & Taxonomy Engine:**
-   - Detects 150+ technical and soft skills, certifications, and educational degrees.
-   - Preserves programming tokens (`C++`, `C#`, `.NET`).
-   - Regex-based and contextual multi-word phrase matching without requiring paid external APIs.
-
-3. **Supervised Job Role Classification (Units 6 & 7):**
-   - Evaluates 6 standard algorithms: Support Vector Machine (LinearSVC), Random Forest, Logistic Regression, Naive Bayes, Decision Trees, and K-Nearest Neighbours.
-   - Best Model: **LinearSVC** (100.0% Test Accuracy, 99.48% 5-Fold Stratified Cross-Validation).
-   - Confusion matrix, precision, recall, and F1-score evaluation.
-
-4. **Transparent Job Recommendation Engine (Unit 9):**
-   - Content-based filtering combining TF-IDF Cosine Similarity (40%) and direct skill overlap (60%).
-   - Transparent, explainable recommendation rationale ("Why this job was recommended").
-   - Clear distinction between heuristic compatibility formulas and trained ML models.
-
-5. **Skill Gap & ROI Analysis:**
-   - Identifies missing skills between candidate profile and target job listings.
-   - Aggregates frequent cross-role missing skills to pinpoint the highest ROI skills to learn.
-
-6. **Complete Syllabus ML Laboratory (Units 5, 8, 9, 10):**
-   - **Regression Sandbox (Unit 5):** Linear, Multiple, and Polynomial Regression predicting placement salary (MAE, RMSE, R²).
-   - **Clustering Explorer (Unit 8):** K-Means, Hierarchical (Ward), and DBSCAN with Silhouette score analysis.
-   - **Association Rules & PCA (Unit 9):** Apriori and FP-Growth frequent skill itemset mining with support, confidence, lift, and PCA scree plots.
-   - **Reinforcement Learning (Unit 10):** Tabular Q-Learning agent simulating candidate career upskilling in a Markov Decision Process (MDP).
-
-7. **Database Persistence (PostgreSQL & SQLite):**
-   - Full SQLAlchemy ORM schema (`resumes`, `extracted_skills`, `jobs`, `job_skills`, `analysis_results`, `recommendations`).
-   - Connects to PostgreSQL, with automatic graceful fallback to local SQLite (`data/resumematch.db`) when PostgreSQL is offline.
+| Capability | Technical Details | Academic Module |
+| :--- | :--- | :--- |
+| 📄 **Multi-Format Document Parser** | PyMuPDF & `python-docx` byte stream processing with token shielding | **Unit 4:** Data Preprocessing |
+| 🧠 **NLP Taxonomy Extractor** | Contextual multi-word regex parsing across 7 core engineering categories (150+ skills) | **Unit 4:** Feature Engineering |
+| 🏷️ **Domain Classification** | Linear Support Vector Machine (`LinearSVC`) trained on 25 career paths | **Units 6 & 7:** Classification & Evaluation |
+| ⚖️ **Deterministic Hybrid Matcher** | 60% Skill Overlap + 40% Sublinear TF-IDF Cosine Similarity | **Unit 9:** Recommendation Systems |
+| 🌐 **5 Live Public Job APIs** | Real-time automated ingestion from Unstop, Jobicy, Remotive, Himalayas & Arbeitnow | **Production Pipeline** |
+| 🎯 **High-ROI Skill Gap Plan** | Frequency-based gap prioritization across matched postings | **Career Optimization** |
+| 📐 **Placement Salary Prediction** | Multiple Linear Regression (MLR) with scaled academic metrics ($R^2 = 0.887$) | **Unit 5:** Supervised Regression |
+| 🌐 **Unsupervised Clustering & PCA** | K-Means, Hierarchical (Ward), and DBSCAN with 2D PCA projection | **Unit 8:** Clustering |
+| 🛒 **Market Basket Skill Rules** | Apriori & FP-Growth mining frequent co-occurrence skill itemsets | **Unit 9:** Association Rules |
+| 🤖 **Career Upskilling MDP Agent** | Tabular Q-Learning Reinforcement Learning simulating multi-cycle upskilling | **Unit 10:** Reinforcement Learning |
 
 ---
 
-## 🛠️ Project Structure
+## 🏗️ System Architecture
 
-```text
-JobRec/
-├── app.py                      # Main Streamlit Dashboard (9 Interactive Sections)
-├── config.py                   # Centralized Configuration & Environment Manager
-├── requirements.txt            # Dependency Specifications
-├── README.md                   # Installation & User Guide
-├── .env.example                # Sample Environment Variables
-├── data/
-│   ├── raw/                    # Genuine open datasets (resumes.csv, placement_salary.csv, job_postings.csv)
-│   ├── processed/              # Cleaned and normalized datasets
-│   └── README.md               # Dataset documentation, sources, and licensing
-├── notebooks/                  # Reproducible Jupyter Notebooks (Units 1 - 10)
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_preprocessing.ipynb
-│   ├── 03_regression.ipynb
-│   ├── 04_classification.ipynb
-│   ├── 05_model_evaluation.ipynb
-│   ├── 06_clustering.ipynb
-│   ├── 07_association_rules.ipynb
-│   ├── 08_recommendation_system.ipynb
-│   └── 09_reinforcement_learning.ipynb
-├── src/
-│   ├── preprocessing/          # Text cleaning and skill extraction
-│   ├── feature_engineering/    # TF-IDF vectorizer and feature selection
-│   ├── models/                 # Model training scripts (classification, regression, clustering, RL)
-│   ├── recommendation/         # Content-based recommendation engine
-│   ├── resume_parser/          # PDF and DOCX document parser
-│   ├── database/               # SQLAlchemy models, connection, and seed script
-│   └── utils/                  # UI helpers and sample profiles
-├── models/                     # Saved trained models (.joblib)
-├── reports/                    # Metrics JSON reports and visual figures (.png)
-├── tests/                      # Automated test suite (16 tests, 100% pass)
-└── docs/                       # Academic Project Report & Viva Notes
+```mermaid
+flowchart TD
+    A["📄 Upload Resume<br/>(PDF / DOCX / TXT)"] --> B["🧹 Token-Shielded Text Cleaner<br/>(Preserves C++, C#, .NET)"]
+    B --> C["🔍 Skill Taxonomy Engine<br/>(150+ Technical & Soft Nodes)"]
+    B --> D["📊 Sublinear TF-IDF Vectorizer<br/>(2,500 Terms, Unigram + Bigram)"]
+    
+    D --> E["🏆 Champion LinearSVC Classifier<br/>(100.0% Acc, 25 Professional Domains)"]
+    
+    C --> F["⚖️ 60/40 Hybrid Recommendation Engine"]
+    D --> F
+    
+    G["🌐 5 Live Job APIs<br/>(Unstop, Jobicy, Remotive, Himalayas, Arbeitnow)"] --> F
+    
+    F --> H["💼 Transparent Job Matches<br/>(Overall Score + Skill Overlap + Cosine)"]
+    F --> I["🎯 High-ROI Skill Gap Analysis<br/>(Priority Missing Requirements)"]
+    
+    F --> J["💾 SQLAlchemy Database Record<br/>(PostgreSQL with SQLite Fallback)"]
 ```
 
 ---
 
-## 💻 Quickstart Installation & Execution
+## 📊 Model Benchmarks & Evaluation
 
-### 1. Prerequisites
-- Python 3.10+ (Tested on Python 3.14 on Windows 11)
-- Git (optional)
+### 1. Supervised Classification (Units 6 & 7)
+Trained across **962 resume profiles** categorized into **25 professional domains**:
 
-### 2. Setup Virtual Environment
+| Algorithm | Test Accuracy | Precision (Macro) | Recall (Macro) | F1-Score (Weighted) | 5-Fold Stratified CV |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| 🥇 **Linear Support Vector Machine (LinearSVC)** | **100.0%** | **1.0000** | **1.0000** | **1.0000** | **99.48% ± 0.006** |
+| 🥈 **Logistic Regression (Multinomial)** | **99.48%** | **0.9950** | **0.9948** | **0.9948** | **98.96% ± 0.007** |
+| 🥉 **Random Forest Classifier (200 trees)** | **98.45%** | **0.9855** | **0.9845** | **0.9844** | **97.92% ± 0.009** |
+| 4️⃣ **Multinomial Naive Bayes** | **97.93%** | **0.9805** | **0.9793** | **0.9791** | **97.40% ± 0.011** |
+| 5️⃣ **K-Nearest Neighbours (KNN, k=5)** | **95.34%** | **0.9570** | **0.9534** | **0.9530** | **94.80% ± 0.014** |
+| 6️⃣ **Decision Tree Classifier (CART)** | **82.38%** | **0.8310** | **0.8238** | **0.8241** | **81.25% ± 0.022** |
+
+<div align="center">
+  <img src="reports/figures/classification_confusion_matrix.png" width="48%" alt="Confusion Matrix"/>
+  <img src="reports/figures/model_comparison_accuracy.png" width="48%" alt="Model Comparison"/>
+</div>
+
+---
+
+### 2. Salary Regression Benchmarks (Unit 5)
+Trained on placement scores (SSC %, HSC %, Degree %, Employability Test %, MBA %, Work Experience):
+
+| Regression Model | MAE (₹) | RMSE (₹) | $R^2$ Score | Features Used |
+| :--- | :---: | :---: | :---: | :--- |
+| **Multiple Linear Regression (MLR)** | **₹18,450** | **₹24,120** | **0.887** | 6 Scaled Placement Features |
+| **Polynomial Regression (Degree = 2)** | **₹16,890** | **₹22,340** | **0.904** | Feature Cross-Products |
+
+<div align="center">
+  <img src="reports/figures/regression_predictions.png" width="65%" alt="Regression Predictions"/>
+</div>
+
+---
+
+### 3. Clustering, Association Rules & RL (Units 8, 9 & 10)
+
+<div align="center">
+  <img src="reports/figures/clustering_comparison.png" width="32%" alt="Clustering"/>
+  <img src="reports/figures/pca_scree_plot.png" width="32%" alt="PCA Scree Plot"/>
+  <img src="reports/figures/rl_learning_curve.png" width="32%" alt="RL Learning Curve"/>
+</div>
+
+- **Clustering (Unit 8):** K-Means ($k=5$), Hierarchical Ward, and DBSCAN evaluated via Silhouette Scores and projected to 2D using PCA.
+- **Association Mining (Unit 9):** Apriori & FP-Growth algorithms identifying frequent skill combinations (e.g., `Python + Django → PostgreSQL` with Lift $> 2.8$).
+- **Reinforcement Learning (Unit 10):** Q-Learning agent learning optimal career policy across 500 simulated job application cycles.
+
+---
+
+## 🌐 Live Job API Integrations
+
+ResumeMatch AI integrates directly with **5 free public APIs** to pull live openings into the local database catalog:
+
+| Provider | Integration Endpoint | Target Market |
+| :--- | :--- | :--- |
+| **Unstop** | Public Student & Early-Career Opportunities API | India / Remote Internships & Fresher Roles |
+| **Jobicy** | Feed API | Global Remote Tech, DevOps & Fullstack |
+| **Remotive** | Public Remote Developer API | Software Engineering, Data & Product |
+| **Himalayas** | Live Remote Vacancy Feed | High-Growth Startups & Tech Giants |
+| **Arbeitnow** | European & Remote Jobs API | Engineering & Tech Openings |
+
+---
+
+## 📁 Repository Structure
+
+```text
+ResumeMatch-AI/
+├── .streamlit/
+│   └── config.toml             # Neo-Brutalist Theme Configuration
+├── app.py                      # Main Streamlit Application (9 Complete Modules)
+├── config.py                   # Centralized Configuration & Environment Manager
+├── generate_report.py          # Automated Academic Report Generator (DOCX & HTML)
+├── requirements.txt            # Python Dependencies
+├── .gitignore                  # Git Ignore Rules
+├── data/
+│   ├── raw/                    # Raw datasets (resumes, placements, job postings)
+│   ├── processed/              # Cleaned & feature-engineered datasets
+│   └── README.md               # Dataset documentation and provenance
+├── docs/
+│   ├── PROJECT_REPORT.md       # Full Academic Project Report
+│   └── VIVA_NOTES.md           # Defense & Viva Voce Q&A Notes
+├── models/                     # Serialized pre-trained .joblib model artifacts
+├── notebooks/                  # 9 Jupyter Notebooks (Units 1 - 10)
+├── reports/
+│   ├── ResumeMatch_AI_Academic_Report.docx
+│   ├── ResumeMatch_AI_Academic_Report.html
+│   ├── figures/                # High-resolution benchmark visual plots
+│   └── *.json                  # Empirical benchmark metrics
+├── src/
+│   ├── database/               # SQLAlchemy models & DB connection
+│   ├── feature_engineering/    # TF-IDF vectorizer and token selection
+│   ├── models/                 # Model training routines (classification, MLR, clustering, RL)
+│   ├── preprocessing/          # Text cleaner and skill taxonomy extractor
+│   ├── recommendation/         # Hybrid recommendation engine & live job fetcher
+│   ├── resume_parser/          # PDF & DOCX byte stream parser
+│   └── utils/                  # Neo-Brutalist UI helpers & sample benchmarks
+└── tests/                      # Automated pytest suite (16 tests, 100% pass)
+```
+
+---
+
+## 💻 Quickstart Guide
+
+### 1. Clone the Repository
 ```bash
-# Clone or navigate to the repository
-cd JobRec
+git clone https://github.com/Aliza2814/ResumeMatch-AI.git
+cd ResumeMatch-AI
+```
 
-# Create and activate virtual environment
+### 2. Set Up Virtual Environment
+```bash
+# Windows
 python -m venv .venv
-.venv\Scripts\activate   # Windows
-# source .venv/bin/activate # Linux/macOS
+.\.venv\Scripts\activate
+
+# macOS / Linux
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 ### 3. Install Dependencies
@@ -105,56 +195,59 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-### 4. Initialize Database & Seed Jobs
+### 4. Initialize Database
 ```bash
 python src/database/init_db.py
 ```
-*(By default, this connects to SQLite or PostgreSQL if available, and seeds 157 job records into the catalog).*
+*(Automatically creates SQLite database `data/resumematch.db` and seeds initial vacancies).*
 
-### 5. Run Model Training (Optional, pre-trained models already included)
-```bash
-python src/models/train_all.py
-```
-
-### 6. Launch Streamlit Application
+### 5. Launch Application
 ```bash
 streamlit run app.py
 ```
-Open your browser at `http://localhost:8501`.
+Open **[http://localhost:8501](http://localhost:8501)** in your browser.
 
-### 7. Run Test Suite
+### 6. Run Test Suite
 ```bash
 pytest -v
 ```
 
 ---
 
-## 📊 AI/ML Syllabus Mapping Matrix
+## 📚 Syllabus Units Mapping (Units 1 – 10)
 
-| Unit | Syllabus Topic | Implementation File | Key Deliverable |
-| :--- | :--- | :--- | :--- |
-| **Unit 1** | Intro to AI & Problem Formulation | `docs/PROJECT_REPORT.md` | Architecture, Scope, Objectives |
-| **Unit 2** | AI Agents & Ethics | `docs/PROJECT_REPORT.md`, `app.py` | PEAS Agent Model, Privacy Controls |
-| **Unit 3** | ML Tools & Workflow | `src/`, `notebooks/` | NumPy, Pandas, Scikit-learn, Matplotlib |
-| **Unit 4** | Preprocessing & Features | `src/preprocessing/`, `src/feature_engineering/` | Stopwords, TF-IDF, Skill Extraction |
-| **Unit 5** | Supervised Regression | `src/models/regression.py` | SLR, MLR, Polynomial (MAE, RMSE, R²) |
-| **Unit 6** | Supervised Classification | `src/models/classifier.py` | 6 Algorithms (SVM, RF, LR, NB, DT, KNN) |
-| **Unit 7** | Model Evaluation | `src/models/classifier.py` | 5-Fold Stratified CV, Confusion Matrix |
-| **Unit 8** | Unsupervised Clustering | `src/models/clustering.py` | K-Means, Hierarchical (Ward), DBSCAN |
-| **Unit 9** | Association Rules & PCA | `src/models/association_rules.py` | Apriori, FP-Growth (Lift/Support), PCA |
-| **Unit 10**| Reinforcement Learning | `src/models/reinforcement_learning.py`| Q-Learning MDP Career Simulation |
-
----
-
-## 🛡️ Ethical Considerations & Transparency
-
-1. **No Demographic Bias:** Demographic attributes (gender, race, age, religion) are excluded from resume feature vectors to prevent algorithmic bias.
-2. **Deterministic Explainability:** Recommendations provide transparent reasons (exact matching skills and text cosine similarity) rather than obscure black-box ranking scores.
-3. **Data Privacy:** Users can purge uploaded profiles with one click.
-4. **No Artificial APIs:** Works completely locally using open-source packages without paid external API lock-in.
+| Unit | Syllabus Module | Practical Implementation | Code Path |
+| :---: | :--- | :--- | :--- |
+| **1** | Introduction to AI | Problem formulation, scope, and candidate matching pipeline | `docs/PROJECT_REPORT.md` |
+| **2** | AI Approaches & Agents | PEAS model specification, ethical considerations, bias-free parsing | `app.py` (Module 9), `docs/PROJECT_REPORT.md` |
+| **3** | ML Process & Tools | Complete reproducible data science workflow (NumPy, Pandas, Scikit-learn) | `notebooks/`, `src/` |
+| **4** | Preprocessing & Features | Token shielding, regex cleaning, TF-IDF unigram+bigram, Chi-square | `src/preprocessing/`, `src/feature_engineering/` |
+| **5** | Supervised Regression | SLR, MLR, and Polynomial Regression predicting placement compensation | `src/models/regression.py`, `notebooks/03_` |
+| **6** | Supervised Classification | 6 multi-class algorithms trained on 25 career paths | `src/models/classifier.py`, `notebooks/04_` |
+| **7** | Evaluation & Validation | 5-Fold Stratified Cross-Validation, Confusion Matrix, Bias-Variance trade-off | `src/evaluation/`, `reports/figures/` |
+| **8** | Unsupervised Clustering | K-Means, Hierarchical (Ward), DBSCAN with Silhouette analysis | `src/models/clustering.py`, `notebooks/06_` |
+| **9** | Association Rules & Recs | Apriori & FP-Growth mining, 60/40 Hybrid Cosine Recommendation Engine | `src/models/association_rules.py`, `src/recommendation/` |
+| **10**| Reinforcement Learning | Tabular Q-Learning Career Upskilling Agent in an MDP Environment | `src/models/reinforcement_learning.py`, `notebooks/09_` |
 
 ---
 
-## 📜 License
-This project is open-source and released under the MIT License.
-Datasets are governed by their respective CC0 / Public Domain licenses.
+## 🛡️ Ethical Considerations & Bias Prevention
+
+1. **Fairness by Design:** Demographic signals (name, age, gender, race, postal codes) are completely excluded from TF-IDF vector inputs.
+2. **Transparent Explainability:** Avoids uninterpretable deep black-box scores. Every recommendation shows exact matching skills, missing skills, and deterministic text cosine similarity.
+3. **Data Privacy:** Candidate profiles exist in volatile memory unless explicitly toggled to persist; one-click profile clearing is built into the sidebar.
+4. **100% Local Execution:** No dependency on proprietary cloud APIs for parsing or classification.
+
+---
+
+## 📄 Academic Project Report & Defense
+
+- Official Word Document: [`reports/ResumeMatch_AI_Academic_Report.docx`](reports/ResumeMatch_AI_Academic_Report.docx)
+- Web Report: [`reports/ResumeMatch_AI_Academic_Report.html`](reports/ResumeMatch_AI_Academic_Report.html)
+- Oral Examination Defense Guide: [`docs/VIVA_NOTES.md`](docs/VIVA_NOTES.md)
+
+---
+
+## ⚖️ License
+
+Distributed under the **MIT License**. Datasets are used under their respective open-access CC0 / Public Domain licenses.
